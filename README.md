@@ -20,6 +20,8 @@ BBK 9588《使命》S1 移植兼容版
         DataLib.dat
         DataLibIndex.dat
 assets/
+  shiming_icon_logo_transparent.png
+  shiming_icon_80x80.png
   shiming_9588_compat_16x9.png
   shiming_9588_demo_preview.gif
   shiming_9588_demo.mp4
@@ -52,6 +54,13 @@ README.md
 `scripts/` 保存迁移过程中可复用的分析和补丁脚本，包括 BDA header 校验、图标导入导出、API 兼容矩阵、GUI shim、字形内嵌和 S1 字库解码工具。
 
 这些脚本用于研究和复现实验步骤；只安装游戏不需要运行它们。详细说明见 [scripts/README.md](scripts/README.md)。
+
+## 图标资源
+
+![使命图标](assets/shiming_icon_80x80.png)
+
+- [透明 logo 源图](assets/shiming_icon_logo_transparent.png)
+- [BDA 80x80 菜单图标](assets/shiming_icon_80x80.png)
 
 ## 演示视频
 
