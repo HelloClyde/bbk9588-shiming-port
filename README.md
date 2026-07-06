@@ -21,6 +21,7 @@ BBK 9588《使命》S1 移植兼容版
         DataLibIndex.dat
 assets/
   shiming_9588_compat_16x9.png
+  shiming_9588_demo_preview.gif
   shiming_9588_demo.mp4
 CHANGELOG.md
 DATA_NOTICE.md
@@ -43,7 +44,9 @@ README.md
 
 ## 演示视频
 
-<video src="assets/shiming_9588_demo.mp4" controls width="100%"></video>
+[![使命 9588 兼容版演示](assets/shiming_9588_demo_preview.gif)](assets/shiming_9588_demo.mp4)
+
+[打开 H.264 MP4 演示视频](assets/shiming_9588_demo.mp4)
 
 ## v1.0 可用版本
 
