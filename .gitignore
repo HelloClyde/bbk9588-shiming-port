@@ -7,6 +7,8 @@ desktop.ini
 *.bak
 *.swp
 *~
+__pycache__/
+*.py[cod]
 
 # Local packaging outputs
 *.zip
@@ -16,4 +18,3 @@ desktop.ini
 # Logs and local notes
 *.log
 notes.local.*
-
