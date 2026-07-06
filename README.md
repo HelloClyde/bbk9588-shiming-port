@@ -23,6 +23,11 @@ assets/
   shiming_9588_compat_16x9.png
   shiming_9588_demo_preview.gif
   shiming_9588_demo.mp4
+scripts/
+  README.md
+  bda_*.py
+  mission_*.py
+  s1_font_decode.py
 CHANGELOG.md
 DATA_NOTICE.md
 LICENSE
@@ -41,6 +46,12 @@ README.md
 `应用/S1原始数据备份/使命_S1原始.bda` 只是 S1 原始文件备份，不要放到 9588 的 `应用/程序/` 目录运行。
 
 如果从 GitHub Release 下载 zip，解压后请保持 `应用/...` 目录结构不变。
+
+## 附带脚本
+
+`scripts/` 保存迁移过程中可复用的分析和补丁脚本，包括 BDA header 校验、图标导入导出、API 兼容矩阵、GUI shim、字形内嵌和 S1 字库解码工具。
+
+这些脚本用于研究和复现实验步骤；只安装游戏不需要运行它们。详细说明见 [scripts/README.md](scripts/README.md)。
 
 ## 演示视频
 
