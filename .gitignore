@@ -1,0 +1,19 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Local packaging outputs
+*.zip
+*.7z
+*.rar
+
+# Logs and local notes
+*.log
+notes.local.*
+
