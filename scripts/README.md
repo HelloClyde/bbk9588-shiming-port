@@ -17,8 +17,8 @@
 常用示例：
 
 ```powershell
-python scripts\bda_validate.py 应用\程序\使命_9588兼容版_v1.0.bda
-python scripts\bda_extract_icons.py 应用\程序\使命_9588兼容版_v1.0.bda out_icons
+python scripts\bda_validate.py 应用\程序\使命_9588兼容版_v1.1.bda
+python scripts\bda_extract_icons.py 应用\程序\使命_9588兼容版_v1.1.bda out_icons
 ```
 
 ## 《使命》迁移相关脚本
@@ -28,7 +28,7 @@ python scripts\bda_extract_icons.py 应用\程序\使命_9588兼容版_v1.0.bda 
 - `mission_build_gui_table_shim.py`：GUI 表 shim 构建脚本。
 - `mission_build_timing_compat.py`：稳定进入主菜单阶段使用的 timing 兼容补丁。
 - `mission_patch_no834.py`：跳过 `GUI+0x834` 字形生成调用，用于验证文字缺失但流程可运行。
-- `mission_patch_glyph_embed_gbk_b0f7.py`：v1.0 使用的字形内嵌方案，把 9588 `HZK_LIB.BIN` 的 GBK `A1-F7` 字形和 ASCII 字形内嵌到 BDA。
+- `mission_patch_glyph_embed_gbk_b0f7.py`：v1.1 使用的字形内嵌方案，把 9588 `HZK_LIB.BIN` 的 GBK `A1-F7` 字形和 ASCII `6x12` 字形内嵌到 BDA。
 - `s1_font_decode.py`：按 S1 字库索引方式解码/预览字形，用于确认 GBK index 和 glyph 格式。
 
 `mission_api_compat_matrix.py` 需要 `capstone`：
@@ -45,4 +45,4 @@ python scripts\mission_patch_glyph_embed_gbk_b0f7.py input.bda HZK_LIB.BIN outpu
 
 ## 版本说明
 
-当前发布的可用 BDA 是 `应用/程序/使命_9588兼容版_v1.0.bda`。如果只想安装游戏，不需要运行这些脚本。
+当前发布的可用 BDA 是 `应用/程序/使命_9588兼容版_v1.1.bda`。如果只想安装游戏，不需要运行这些脚本。
