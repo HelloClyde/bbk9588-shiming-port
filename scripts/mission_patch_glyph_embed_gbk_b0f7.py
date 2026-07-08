@@ -23,6 +23,8 @@ EMBED_SIZE = GBK_ROW_COUNT * GBK_ROW_WIDTH * GLYPH_SIZE
 ASCII_FIRST = 0x20
 ASCII_COUNT = 0x5F
 ASCII_SIZE = ASCII_COUNT * GLYPH_SIZE
+ASCII_RETURN_SITE = 0x81C511B8
+ADDIU_V0_12 = (0x2402000C).to_bytes(4, "little")
 
 FILE_SIZE_MINUS_4_OFF = 0x10
 
@@ -122,11 +124,11 @@ def ascii_glyph(ch: str) -> bytes:
     rows = [0] * 12
     for y, bits in enumerate(pattern, 2):
         row = 0
-        for x, bit in enumerate(bits, 1):
+        for x, bit in enumerate(bits):
             if bit == "1":
-                row |= 0x8000 >> x
+                row |= 0x80 >> x
         rows[y] = row
-    return b"".join(row.to_bytes(2, "big") for row in rows)
+    return bytes(rows + [0] * 12)
 
 
 def build_embed_table(hzk: bytes) -> bytes:
@@ -257,6 +259,11 @@ def patch(src: Path, hzk_path: Path, dst: Path, *, after_bss: bool) -> None:
             raise ValueError(f"unexpected call-site instruction at 0x{va:08x}: {old.hex()}")
         data[off : off + 4] = jal(GLYPH_VA)
         data[off + 4 : off + 8] = delay_slot
+    return_off = ASCII_RETURN_SITE - BDA_BASE
+    old_return = data[return_off : return_off + 4]
+    if old_return != bytes.fromhex("21106002"):
+        raise ValueError(f"unexpected ASCII return instruction at 0x{ASCII_RETURN_SITE:08x}: {old_return.hex()}")
+    data[return_off : return_off + 4] = ADDIU_V0_12
     if len(data) < table_off:
         data += b"\0" * (table_off - len(data))
     data += build_embed_table(hzk_path.read_bytes())

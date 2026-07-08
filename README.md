@@ -79,16 +79,16 @@ README.md
 
 `使命_9588兼容版_v1.0.bda`：
 
-- SHA256：`C2BF69846B8BD8294CED143CF5D5BB8045D3872677E885C5FEB807E2494A8AF3`
+- SHA256：`74539915BEBF22150D86894FC74496A7A5AB6332B64F7E1F6F66AE5727B66826`
 - 大小：`1801028` bytes
 - 9588 header/checksum：通过
 - 标题：`使命`
 - 分类：`4`
 - 入口 offset：`0x95f8`
 - 图标：gpt-image2 高清化使命 logo 版图标，透明区使用 VX/RGB565 `0xf81f` 紫色 colorkey
-- 真机结果：可进入主菜单、可进入“新的征程”，文字可渲染
+- 真机结果：可进入主菜单、可进入“新的征程”，中文和 ASCII 文字可渲染
 
-该版本不在运行时读取系统字库，也不调用 9588 字体 reader/FS 字库路径。它把 9588 `HZK_LIB.BIN` 中的 `A1-F7` GBK 区间字形内嵌到 BDA 的 BSS 之后，并额外内嵌半角 ASCII `0x20-0x7e` 的轻量字模。
+该版本不在运行时读取系统字库，也不调用 9588 字体 reader/FS 字库路径。它把 9588 `HZK_LIB.BIN` 中的 `A1-F7` GBK 区间字形内嵌到 BDA 的 BSS 之后，并额外内嵌半角 ASCII `0x20-0x7e` 的 `6x12` 轻量字模。
 
 关键地址：
 
@@ -97,6 +97,7 @@ Mission BSS end     = 0x81d4ced4
 GBK glyph table VA  = 0x81d4ced4
 ASCII glyph table VA= 0x81dadc84
 GUI+0x834 shim VA   = 0x81c8e780
+ASCII size return   = 0x0c
 ```
 
 ## 原始文件
@@ -164,7 +165,9 @@ glyph = 24 bytes
 - `hzk_fs`：在 `GUI+0x834` 中 open/seek/read `HZK_LIB.BIN`，真机直接死机。
 - `hzk_cache/preinit`：运行期 alloc/read 整个字库，真机在宠物管家后或进入正文前死机。
 
-当前可用方案是把所需字形直接内嵌到 BDA，运行时只做内存查表和 24-byte copy，不再依赖系统字体 API 或 FS。
+当前可用方案是把所需字形直接内嵌到 BDA，运行时只做内存查表和字形 copy，不再依赖系统字体 API 或 FS。
+
+ASCII 需要单独走 `6x12` 分支。旧版把 ASCII 也作为 24-byte 字形返回，部分文本会被后续 `12x24` 绘制路径按 48 byte 读取，导致英文下半部分截断或污染。当前版本把 ASCII 字形表改为前 12 byte 行格式，并让 ASCII 单字节 wrapper 返回 `0x0c`。
 
 ## 版权和数据说明
 
