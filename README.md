@@ -36,6 +36,11 @@ LICENSE
 README.md
 ```
 
+## 游戏攻略
+
+- [剧情摘要与野外地图攻略](docs/mission-guide/README.md)
+- [打开地图查看器](docs/mission-guide/index.html)
+
 ## 安装方法
 
 把本项目中的以下目录和文件复制到 9588 对应位置：
