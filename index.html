@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BBK9588 使命资料攻略</title>
+  <style>
+    :root { color-scheme: dark; --bg: #171b20; --surface: #252b33; --line: #414a56; --text: #edf1f5; --muted: #b5c0cb; --accent: #58b9d9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, "Microsoft YaHei", sans-serif; }
+    header { padding: 28px max(20px, calc((100vw - 1080px) / 2)); border-bottom: 1px solid var(--line); background: #1d232a; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 4px; font-size: 28px; }
+    h2 { margin-bottom: 12px; font-size: 22px; }
+    h3 { margin-bottom: 4px; font-size: 17px; color: #d7ecf4; }
+    .subtitle, .note, .readout { color: var(--muted); }
+    .content { max-width: 1080px; margin: 0 auto; padding: 28px 20px 44px; }
+    section { margin-bottom: 36px; }
+    .story { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .chapter { border-left: 3px solid var(--accent); padding: 10px 14px; background: var(--surface); }
+    .chapter p { margin-bottom: 0; font-size: 14px; }
+    ol { margin: 0; padding-left: 24px; }
+    .viewer { border: 1px solid var(--line); background: #20262d; }
+    .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+    select, button, input { font: inherit; }
+    select { max-width: min(420px, 100%); padding: 5px 8px; }
+    button { min-width: 32px; padding: 5px 9px; cursor: pointer; }
+    .stage { height: min(72vh, 820px); overflow: auto; cursor: grab; background: #30353a; }
+    .stage.dragging { cursor: grabbing; }
+    .canvas { width: max-content; height: max-content; transform-origin: 0 0; }
+    img { display: block; max-width: none; user-select: none; -webkit-user-drag: none; }
+    code { color: #a9def0; }
+    @media (max-width: 600px) { header { padding: 20px; } .content { padding: 20px 14px; } .stage { height: 62vh; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BBK9588《使命》资料攻略</h1>
+    <p class="subtitle">剧情主线与 S1 资源还原野外地图</p>
+  </header>
+  <main class="content">
+    <section>
+      <h2>剧情摘要</h2>
+      <p>数十年前，人类诸国联合对抗日益强大的魔君，却在多伦决战惨败。罗汉王国国王战死，各国陆续覆灭，幸存者退守偏远聚落继续抵抗。</p>
+      <div class="story">
+        <article class="chapter"><h3>1. 光明城</h3><p>主角是罗汉王国流亡的王室后裔。初到光明城时被怀疑是奸细，在大法师瑞恩安排下清剿蛇妖、夺回物资、刺杀敌军头目并窃取军情，逐步获得信任。</p></article>
+        <article class="chapter"><h3>2. 王室证明</h3><p>主角进入王都废墟，找回能与手中信物相配的另一块金牌，证明王室身份，成为各地反抗者重新团结的希望。</p></article>
+        <article class="chapter"><h3>3. 寻找宝物</h3><p>瑞恩指出魔君的力量来自黑暗熔岩。一套传说宝物能够压制这股力量，主角因此从草原出发，沿雪原、沙漠一路追寻线索。</p></article>
+        <article class="chapter"><h3>4. 重聚反抗军</h3><p>雪原的老兵、沙漠的据点和熔岩前线的守军都曾在大战后意志消沉。主角通过解围、收复矿山与绿洲、追杀叛徒、攻破要塞，重建他们继续抗争的信念。</p></article>
+        <article class="chapter"><h3>5. 末日熔岩</h3><p>主角在熔岩地带夺回宝物、清除神坛守卫，将宝物放入神坛削弱魔君，最终在末日熔岩击败黑暗魔君，为重建罗汉王国留下希望。</p></article>
+      </div>
+    </section>
+    <section>
+      <h2>主线任务路线</h2>
+      <ol>
+        <li>草原：消灭蛇妖，夺回物资，刺杀敌军队长，偷取作战情报，前往王国废墟寻找信物。</li>
+        <li>雪原：解救围困的居民，清扫寂静雪原与雪原森林，收复矿山，营救旧联盟将领，寻找藏宝地线索。</li>
+        <li>沙漠：清理城外威胁，收复绿洲，追杀叛徒，攻克沙漠要塞，在浩淼沙海与藏宝地继续搜集情报和宝物。</li>
+        <li>熔岩：消灭怪兽，追回资料，刺探熔岩敌情，夺回宝物，清除神坛守卫并放置宝物，最后消灭魔君。</li>
+      </ol>
+    </section>
+    <section>
+      <h2>野外地图</h2>
+      <p class="note">地图为资源重建图，已转为适合网页攻略的 JPEG。可拖拽浏览，使用滑块或按钮缩放。场景名称仅标注已确认对应关系，其他以资源编号显示。</p>
+      <div class="viewer">
+        <div class="toolbar">
+          <label>地图 <select id="map"></select></label>
+          <button id="minus" type="button" aria-label="缩小">-</button>
+          <label>缩放 <input id="zoom" type="range" min="10" max="200" step="10" value="100"></label>
+          <button id="plus" type="button" aria-label="放大">+</button>
+          <button id="fit" type="button">适合宽度</button>
+          <span id="readout" class="readout">100%</span>
+        </div>
+        <div id="stage" class="stage"><div id="canvas" class="canvas"><img id="image" alt="使命野外地图"></div></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const maps = [
+      ['草原', '408', '4000 城外草原'], ['草原', '710', '4001 边缘草原'], ['草原', '714', '4002 森林草原'], ['草原', '718', '4003 临时营地'], ['草原', '723', '4004 王国废墟'], ['草原', '732', '资源 732'], ['草原', '738', '4005 藏宝地'], ['草原', '742', '资源 742'],
+      ['雪原', '746', '4007 城外雪原'], ['雪原', '754', '4008 寂静雪原'], ['雪原', '758', '4009 雪原森林'], ['雪原', '764', '4010 矿山'], ['雪原', '768', '雪原/敌方据点资源'], ['雪原', '774', '资源 774'], ['雪原', '838', '4012 雪原藏宝地'],
+      ['沙漠', '782', '4014 城外沙漠'], ['沙漠', '788', '4015 沙漠绿洲'], ['沙漠', '792', '4016 沙漠营地'], ['沙漠', '796', '4017 沙漠要塞'], ['沙漠', '798', '4018 浩淼沙海'], ['沙漠', '800', '4019 沙漠藏宝地'], ['沙漠', '804', '资源 804'], ['沙漠', '808', '4013 沙漠小镇'],
+      ['熔岩', '813', '4022 熔岩二'], ['熔岩', '817', '4023 熔岩三'], ['熔岩', '821', '4024 熔岩四'], ['熔岩', '825', '4025 神坛'], ['熔岩', '831', '4026 末日熔岩通道一'], ['熔岩', '833', '4027 末日熔岩通道二'], ['熔岩', '835', '4028 末日熔岩']
+    ];
+    const map = document.getElementById('map');
+    const image = document.getElementById('image');
+    const zoom = document.getElementById('zoom');
+    const canvas = document.getElementById('canvas');
+    const stage = document.getElementById('stage');
+    const readout = document.getElementById('readout');
+    let group = '';
+    for (const [area, id, title] of maps) {
+      if (area !== group) { const optgroup = document.createElement('optgroup'); optgroup.label = area; map.append(optgroup); group = area; }
+      const option = new Option(`${title} (资源 ${id})`, id); map.lastElementChild.append(option);
+    }
+    function applyZoom() { const scale = Number(zoom.value) / 100; canvas.style.transform = `scale(${scale})`; canvas.style.width = `${image.naturalWidth * scale}px`; canvas.style.height = `${image.naturalHeight * scale}px`; readout.textContent = `${zoom.value}% · ${image.naturalWidth || 0} x ${image.naturalHeight || 0}`; }
+    function loadMap() { image.src = `maps/mission_map_seamless_${map.value}.jpg`; }
+    map.addEventListener('change', loadMap);
+    image.addEventListener('load', applyZoom);
+    zoom.addEventListener('input', applyZoom);
+    document.getElementById('minus').addEventListener('click', () => { zoom.value = Math.max(10, Number(zoom.value) - 10); applyZoom(); });
+    document.getElementById('plus').addEventListener('click', () => { zoom.value = Math.min(200, Number(zoom.value) + 10); applyZoom(); });
+    document.getElementById('fit').addEventListener('click', () => { zoom.value = Math.max(10, Math.min(200, Math.floor(stage.clientWidth * 100 / image.naturalWidth))); applyZoom(); });
+    let active = false, startX, startY, scrollX, scrollY;
+    stage.addEventListener('pointerdown', event => { active = true; startX = event.clientX; startY = event.clientY; scrollX = stage.scrollLeft; scrollY = stage.scrollTop; stage.classList.add('dragging'); stage.setPointerCapture(event.pointerId); });
+    stage.addEventListener('pointermove', event => { if (active) { stage.scrollLeft = scrollX - event.clientX + startX; stage.scrollTop = scrollY - event.clientY + startY; } });
+    stage.addEventListener('pointerup', () => { active = false; stage.classList.remove('dragging'); });
+    loadMap();
+  </script>
+</body>
+</html>
