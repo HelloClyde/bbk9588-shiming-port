@@ -38,6 +38,7 @@ README.md
 
 ## 游戏攻略
 
+- [在线地图攻略站点](https://helloclyde.github.io/bbk9588-shiming-port/)
 - [剧情摘要与野外地图攻略](docs/mission-guide/README.md)
 - [打开地图查看器](docs/mission-guide/index.html)
 
